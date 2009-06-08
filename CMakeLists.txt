@@ -20,7 +20,7 @@ macro(CHECK_LIB _LIB _HEADER)
 	endif (NOT ${_HEADER}_ERR)
 endmacro(CHECK_LIB)
 
-check_lib(usb usb.h)
+check_lib(usb libusb-1.0/libusb.h)
 
 set(CMAKE_C_FLAGS_DEBUG "-DDEBUG ${CMAKE_C_FLAGS_DEBUG}")
 
