@@ -1,0 +1,26 @@
+#!/sbin/runscript
+#
+# Razer device configuration tool
+# Generic init script
+#
+# Copyright (c) 2009 Michael Buesch
+# Copyright © 2009 Daniel Cordero
+#
+
+# Path to the PID-file
+PIDFILE="/var/run/razerd/razerd.pid"
+
+start() {
+	ebegin "Starting razerd"
+	start-stop-daemon --start --quiet --background \
+		--pidfile ${PIDFILE} \
+		--exec /usr/sbin/razerd -- -P ${PIDFILE}
+	eend $?
+}
+
+stop() {
+	ebegin "Stopping razerd"
+	start-stop-daemon --stop --quiet \
+		--pidfile ${PIDFILE}
+	eend $?
+}
