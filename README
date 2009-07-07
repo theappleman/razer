@@ -18,6 +18,8 @@ DEPENDENCIES
    http://libusb.sourceforge.net/
    Debian Linux:
 	apt-get install libusb-dev
+   Gentoo Linux:
+        emerge virtual/libusb:0
 
  * QT4 python bindings (for the graphical qrazercfg tool only)
    http://www.trollech.com/
